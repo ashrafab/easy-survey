@@ -11,7 +11,7 @@ const createSurvey = async (req, res) => {
   const { name, description = "" } = req.body;
   if (!name) {
     res.statusCode = 400;
-    res.json({ errors: ["name parameter is required"] });
+    res.json({ errors: { name: "field is required!" } });
     return;
   }
   try {
