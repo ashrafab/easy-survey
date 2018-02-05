@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use("/assets", express.static(path.resolve(__dirname, "../public")));
 
 // setting routes
-app.use(routes);
+app.use("/api", routes);
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../public/index.html"));
 });
